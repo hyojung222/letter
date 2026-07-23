@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday 🎂</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+height:100vh;
+overflow:hidden;
+font-family:"맑은 고딕",sans-serif;
+background:linear-gradient(-45deg,#ffd6e7,#fff7b5,#c6f3ff,#ffe0f5);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* 풍선 */
+.balloons{
+position:absolute;
+top:30px;
+font-size:40px;
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+}
+
+/* 케이크 */
+#cake{
+font-size:120px;
+cursor:pointer;
+animation:beat 1.2s infinite;
+filter:drop-shadow(0 0 15px gold);
+}
+
+@keyframes beat{
+0%,100%{transform:scale(1);}
+50%{transform:scale(1.12);}
+}
+
+/* 카드 */
+#card{
+display:none;
+width:380px;
+padding:35px;
+border-radius:25px;
+background:linear-gradient(#fffef8,#fff5cc);
+border:5px solid gold;
+box-shadow:0 0 30px rgba(255,200,0,.4);
+text-align:center;
+animation:open .6s;
+cursor:pointer;
+}
+
+@keyframes open{
+from{
+transform:scale(.7);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+h1{
+color:#ff4f81;
+margin-bottom:20px;
+}
+
+p{
+font-size:18px;
+line-height:1.9;
+color:#555;
+}
+
+small{
+display:block;
+margin-top:25px;
+color:#888;
+}
+
+/* 반짝이 */
+.star{
+position:absolute;
+color:white;
+animation:twinkle 2s infinite;
+}
+
+@keyframes twinkle{
+0%,100%{
+opacity:.2;
+transform:scale(.8);
+}
+50%{
+opacity:1;
+transform:scale(1.4);
+}
+}
+
+.s1{top:15%;left:15%;}
+.s2{top:20%;right:20%;}
+.s3{bottom:20%;left:10%;}
+.s4{bottom:18%;right:15%;}
+.s5{top:50%;left:8%;}
+.s6{top:60%;right:8%;}
+
+</style>
+</head>
+
+<body>
+
+<div class="balloons">🎈 🎉 🎁 🎈</div>
+
+<div class="star s1">✨</div>
+<div class="star s2">✨</div>
+<div class="star s3">✨</div>
+<div class="star s4">✨</div>
+<div class="star s5">⭐</div>
+<div class="star s6">⭐</div>
+
+<div id="cake">🎂</div>
+
+<div id="card">
+
+<h1>🎉 TO 태쮸 🎉</h1>
+
+<p>
+생일 정말 축하해! 🎂<br><br>
+
+항상 나랑 같이 놀아줘서 고맙고<br>
+앞으로도 함께 놀자<br><br>
+
+언제나 지금처럼 오빠 옆에 빛나는 사람이 함께 해줄께..캬캬캬<br><br>
+
+🎁 생일 진심으로 축하해! 🎁
+</p>
+
+<small>카드를 누르면 다시 케이크로 돌아가요 🎂</small>
+
+</div>
+
+<script>
+const cake=document.getElementById("cake");
+const card=document.getElementById("card");
+
+cake.onclick=()=>{
+cake.style.display="none";
+card.style.display="block";
+}
+
+card.onclick=()=>{
+card.style.display="none";
+cake.style.display="block";
+}
+</script>
+
+</body>
+</html>
